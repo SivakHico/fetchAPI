@@ -3,6 +3,7 @@ import './App.css'
 
 export default function App() {
   const [comment, setComment] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     fetch('https://hn.algolia.com/api/v1/search?query=car')
@@ -10,11 +11,17 @@ export default function App() {
       .then((obj) => setComment(obj.hits))
   }, [])
 
+  const searchFor = (e) => {
+    setSearch(e.target.value)
+  }
+
   return (
     <div className="App">
-      <h1>Fetch Date</h1>
+      <h1>Fetch Data From Api</h1>
       <div>
-        <input type="text" placeholder='Search for what ...' />
+        <input onChange={searchFor} value={search} type="text" placeholder='Search for what ...' />
+        <span>{search}</span>
+        
       </div>
       <div className="card">
         {comment.map((c) =>
