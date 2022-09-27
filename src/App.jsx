@@ -1,29 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [comment, setComment] = useState([])
 
-  const changeName = () => {
-    setName('ddd')
-  }
+  useEffect(() => {
+    fetch('https://hn.algolia.com/api/v1/search?query=sky')
+      .then((res) => res.json())
+      .then((obj) => console.log('obj.objectID'))
+  }, [])
 
   return (
     <div className="App">
-      <h1>UseState</h1>
+      <h1>Fetch Date</h1>
       <div className="card">
-        <button onClick={changeName}>+</button>
-        <button onClick={changeName}>-</button>
-        <p>
-          {name}
-        </p>
+        {comment}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
-
-export default App
