@@ -1,0 +1,4 @@
+Get https://hn.algolia.com/api/v1/search?query=car
+
+###
+Get https://hacker-news.firebaseio.com/v0/item/121003.json?print=pretty
