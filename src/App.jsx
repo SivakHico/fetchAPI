@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import BlogList from './BlogList'
 import './App.css'
+import PassengersList from './Passengers'
 
 export default function App() {
   const [blogs, setBlogs] = useState([
@@ -37,7 +38,7 @@ export default function App() {
         <input onChange={searchFor} value={search} type="text" placeholder='Search for what ...' />
         <span>{search}</span>
       </div>
-      <PassengersList />
+
       <div className="card">
         {comment.map((c) =>
         (
@@ -58,6 +59,7 @@ export default function App() {
           </>
         ))}
       </div>
+      <PassengersList />
     </div>
   )
 }

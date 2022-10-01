@@ -11,7 +11,7 @@ const PassengersList = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://api.instantwebtools.net/v1/passenger?currentPage=${currentPage}&size=5`)
+        fetch(`https://hn.algolia.com/api/v1/search?query=car&page=${currentPage}`)
             .then((response) => response.json())
             .then((json) => { setData(json); setLoading(false); });
 

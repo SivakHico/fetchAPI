@@ -10,7 +10,6 @@ const renderData = (data) => {
     )
 }
 const Pagination = (props) => {
-    // init
     const { currentPage, maxPageLimit, minPageLimit } = props;
     const totalPages = props.response.totalPages - 1;
     const data = props.response.data;
