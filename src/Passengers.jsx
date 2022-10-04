@@ -11,7 +11,7 @@ const PassengersList = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://hn.algolia.com/api/v1/search?query=car&page=${currentPage}`)
+        fetch(`https://hn.algolia.com/api/v1/search?query=car&page=${currentPage}&size=5`)
             .then((response) => response.json())
             .then((json) => { setData(json); setLoading(false); });
 
